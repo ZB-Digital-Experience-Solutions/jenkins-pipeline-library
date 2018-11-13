@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-def call(accessToken, repository, sonarHost, branchName) {
+def call(accessToken, repository, path, sonarHost, branchName) {
     def serviceName = "sonarqube";
     def port = "9000";
     def scannerVersion = "2.8"
@@ -9,7 +9,9 @@ def call(accessToken, repository, sonarHost, branchName) {
         try {
             def srcDirectory = pwd();
             def tmpDir = pwd(tmp: true)
-
+            if( "${path}" != null ){
+                srcDirectory = srcDirectory + path;
+            }
             //work in tmpDir - as sonar scanner will download files from the server
             dir(tmpDir) {
                 def jobName = "${env.JOB_NAME}".tokenize('/')[0]
