@@ -24,7 +24,7 @@ def call(accessToken, gitlabProject, sonarHost, branchName, commitHash) {
 
                 echo("executing sonar scanner ")
 
-                sh "java -jar ${localScanner} -Dsonar.host.url=${sonarHost} -Dsonar.projectKey=${jobName} -Dsonar.branch=${branchName} -Dsonar.projectBaseDir=${srcDirectory} -Dsonar.java.binaries=${srcDirectory}/target/classes -Dsonar.sources=${srcDirectory} -Dsonar.gitlab.url=https://gitlab.com -Dsonar.gitlab.user_token=${accessToken} -Dsonar.gitlab.user_token=${accessToken} -Dsonar.gitlab.commit_sha=${commitHash} -Dsonar.gitlab.project_id=${gitlabProject} -Dsonar.gitlab.ref_name=${branchName} -Dsonar.login=admin -Dsonar.password=admin -X -Dsonar.verbose=true -Dsonar.log.level=DEBUG -Dsonar.showProfiling=true -Dsonar.gitlab.ping_user=true"
+                sh "java -jar ${localScanner} -Dsonar.host.url=${sonarHost} -Dsonar.projectKey=${jobName} -Dsonar.branch=${branchName} -Dsonar.projectBaseDir=${srcDirectory} -Dsonar.java.binaries=${srcDirectory}/target/classes -Dsonar.sources=${srcDirectory} -Dsonar.analysis.mode=preview -Dsonar.gitlab.unique_issue_per_inline=true -Dsonar.gitlab.url=https://gitlab.com -Dsonar.gitlab.user_token=${accessToken} -Dsonar.gitlab.user_token=${accessToken} -Dsonar.gitlab.commit_sha=${commitHash} -Dsonar.gitlab.project_id=${gitlabProject} -Dsonar.gitlab.ref_name=${branchName} -Dsonar.login=admin -Dsonar.password=admin -X -Dsonar.verbose=true -Dsonar.log.level=DEBUG -Dsonar.showProfiling=true -Dsonar.gitlab.ping_user=true"
             }
 
         } catch (err) {
