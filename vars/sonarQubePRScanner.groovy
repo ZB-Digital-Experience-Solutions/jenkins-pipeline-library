@@ -2,7 +2,7 @@
 def call(accessToken, repository, sonarHost) {
     def serviceName = "sonarqube";
     def port = "9000";
-    def scannerVersion = "2.8"
+    def scannerVersion = "3.2.0.1227"
     def runSonarScanner = "true"
 
     if (runSonarScanner) {
