@@ -74,7 +74,7 @@ class PipelineUtils implements Serializable {
             steps.sh "curl -o scanner-cli.jar http://central.maven.org/maven2/org/sonarsource/scanner/cli/sonar-scanner-cli/2.8/sonar-scanner-cli-2.8.jar"
             steps.echo "executing sonar scanner "
             def projectKey = jobName.replaceAll('/', "_")
-            steps.sh "java -jar scanner-cli.jar -Dsonar.host.url=http://sonarqube:9000  -Dsonar.projectKey=${projectKey} -Dsonar.projectBaseDir=${srcDirectory} -Dsonar.java.binaries=${srcDirectory}/target/classes -Dsonar.sources=${srcDirectory}"
+            steps.sh "java -jar scanner-cli.jar -Dsonar.host.url=http://sonarqube:9000  -Dsonar.projectKey=${projectKey} -Dsonar.projectBaseDir=${srcDirectory} -Dsonar.java.binaries=${srcDirectory}/target/classes -Dsonar.exclusions=${srcDirectory}/src/java/test/****/*.java -Dsonar.sources=${srcDirectory}"
         } catch (err) {
             print "Failed to execute scanner:"
             print "Exception: ${err}"
