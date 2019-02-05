@@ -24,7 +24,7 @@ def call(accessToken, repository, sonarHost, branchName) {
 
                 echo("executing sonar scanner ")
 
-                sh "java -jar ${localScanner} -Dsonar.junit.reportsPath=target/surefire-reports -Dsonar.surefire.reportsPath=target/surefire-reports -Dsonar.java.coveragePlugin=jacoco -Dsonar.exclusions=${srcDirectory}/src/java/test/****/*.java -Dsonar.language=java -Dsonar.jacoco.reportPath=target/jacoco.exec -Dsonar.host.url=${sonarHost} -Dsonar.projectKey=${jobName} -Dsonar.branch=${branchName} -Dsonar.projectBaseDir=${srcDirectory} -Dsonar.java.binaries=${srcDirectory}/target/classes -Dsonar.sources=${srcDirectory} -Dsonar.login=admin -Dsonar.password=admin"
+                sh "java -jar ${localScanner} -Dsonar.junit.reportsPath=target/surefire-reports -Dsonar.surefire.reportsPath=target/surefire-reports -Dsonar.java.coveragePlugin=jacoco -Dsonar.exclusions=${srcDirectory}/src/test/java/****/*.java -Dsonar.language=java -Dsonar.jacoco.reportPath=target/jacoco.exec -Dsonar.host.url=${sonarHost} -Dsonar.projectKey=${jobName} -Dsonar.branch=${branchName} -Dsonar.projectBaseDir=${srcDirectory} -Dsonar.java.binaries=${srcDirectory}/target/classes -Dsonar.sources=${srcDirectory} -Dsonar.login=admin -Dsonar.password=admin"
             }
 
         } catch (err) {
