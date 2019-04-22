@@ -1,0 +1,61 @@
+---
+- - :whitelist
+  - Apache 2.0
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2019-04-22 20:38:23.275965400 Z
+- - :whitelist
+  - MIT
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2019-04-22 20:38:34.895080600 Z
+- - :whitelist
+  - Apache Software Licenses
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2019-04-22 20:45:25.931083800 Z
+- - :whitelist
+  - Apache 2.0 License
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2019-04-22 20:45:40.743270200 Z
+- - :whitelist
+  - New BSD License
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2019-04-22 20:49:59.345270000 Z
+- - :whitelist
+  - BSD
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2019-04-22 20:50:05.086821700 Z
+- - :whitelist
+  - Eclipse Public License - v 1.0, GNU Lesser General Public License
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2019-04-22 20:51:02.109245400 Z
+- - :whitelist
+  - Eclipse Public License - v 1.0
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2019-04-22 20:51:26.373285400 Z
+- - :whitelist
+  - Eclipse Public License 1.0
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2019-04-22 20:52:27.825406200 Z
+- - :name_project
+  - Hello-World
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2019-04-22 20:58:43.470984300 Z
