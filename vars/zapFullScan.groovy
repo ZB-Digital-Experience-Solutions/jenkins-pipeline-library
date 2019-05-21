@@ -7,6 +7,7 @@ def call( serviceName, DNS_NAME) {
             sh """
                   mkdir /zap/wrk
                   (/zap/zap-full-scan.py -r zapreport.html -t http://${serviceName}.${DNS_NAME} || true) >cat.txt
+                  ls -al
                   cp /zap/wrk/zapreport.html .
                 """
               def zaptest = sh(returnStdout: true, script: 'cat cat.txt').trim()
