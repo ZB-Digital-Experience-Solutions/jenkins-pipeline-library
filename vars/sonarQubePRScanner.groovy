@@ -1,8 +1,8 @@
 #!/usr/bin/groovy
-def call(accessToken, repository, sonarHost) {
+def call(accessToken, sonarPassword, repository, sonarHost) {
     def serviceName = "sonarqube";
     def port = "9000";
-    def scannerVersion = "3.2.0.1227"
+    def scannerVersion = "2.8"
     def runSonarScanner = "true"
 
     if (runSonarScanner) {
@@ -25,7 +25,7 @@ def call(accessToken, repository, sonarHost) {
 
                 echo("executing sonar scanner ")
 
-                sh "java -jar ${localScanner} -Dsonar.host.url=${sonarHost} -Dsonar.projectKey=${jobName} -Dsonar.sources=${srcDirectory} -Dsonar.github.repository=${repository} -Dsonar.github.pullRequest=${prId} -Dsonar.github.oauth=${accessToken} -Dsonar.analysis.mode=preview -Dsonar.projectBaseDir=${srcDirectory} -Dsonar.java.binaries=${srcDirectory}/target/classes -Dsonar.login=admin -Dsonar.password=admin"
+                sh "java -jar ${localScanner} -Dsonar.host.url=${sonarHost} -Dsonar.projectKey=${jobName} -Dsonar.sources=${srcDirectory} -Dsonar.github.repository=${repository} -Dsonar.github.pullRequest=${prId} -Dsonar.github.oauth=${accessToken} -Dsonar.analysis.mode=preview -Dsonar.projectBaseDir=${srcDirectory} -Dsonar.java.binaries=${srcDirectory}/target/classes -Dsonar.login=admin -Dsonar.password={sonarPassword}"
             }
 
         } catch (err) {
