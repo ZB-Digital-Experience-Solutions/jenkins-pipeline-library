@@ -7,7 +7,7 @@ def safe(str) {
 def safe(str,replace) {
     def pattern = "[/<>:?*|]"
     if (replace.matches(pattern)) {
-        return "Replace value is invalid!!!"  
+        return "Replace value is invalid!!!. Replace pattern to avoid: " + pattern  
     } else {
         return str.replaceAll(pattern, replace)
     }
