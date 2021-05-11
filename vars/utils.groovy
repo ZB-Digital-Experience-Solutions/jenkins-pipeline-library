@@ -5,10 +5,15 @@ def safe(str) {
 }
 
 def safe(str,replace) {
-    def pattern = "[/<>:?*|]"
+    def pattern = "[/<>:?*|-]"
     if (replace.matches(pattern)) {
         return "Replace value is invalid!!!. Replace pattern to avoid: " + pattern  
     } else {
         return str.replaceAll(pattern, replace)
     }
+}
+
+def timestamp () {
+    def now = new Date()
+    return now.format("YYYYMMddHHmmss")
 }
