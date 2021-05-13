@@ -15,5 +15,5 @@ def safe(str,replace) {
 
 def timestamp () {
     def now = new Date()
-    return now.format("YYYYMMddHHmmss")
+    return now.format("YYMMddHHmm")
 }
