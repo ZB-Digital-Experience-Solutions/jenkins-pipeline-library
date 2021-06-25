@@ -22,3 +22,8 @@ def versionTimestamp () {
     def now = new Date()
     return now.format("YYDHHmm")
 }
+
+def versionYear () {
+    def now = new Date()
+    return now.format("YYYY")
+}
