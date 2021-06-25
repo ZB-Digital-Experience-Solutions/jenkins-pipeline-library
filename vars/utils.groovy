@@ -27,3 +27,8 @@ def versionYear () {
     def now = new Date()
     return now.format("YYYY")
 }
+
+def getVersion () {
+    def now = new Date()
+    return now.format("YYYY") + "." + now.format("DHHmm")
+}
